@@ -30,7 +30,9 @@ By integrating business performance with macroeconomic indicators, the dashboard
 
 ## Dashboard Preview
 
-![Dashboard](images/dashboard_preview.png)
+<a href="images/dashboard_preview.png">
+  <img src="images/dashboard_preview.png" width="100%">
+</a>
 
 **Figure 1.** Interactive R Shiny dashboard for analysing international market potential and profitability.
 
