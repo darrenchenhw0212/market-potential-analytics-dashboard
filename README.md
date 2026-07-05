@@ -55,13 +55,11 @@ The external datasets use 2014 observations to align with the Global Superstore 
 
 ## Data Pipeline
 
-> *(We'll create this diagram later.)*
+The dashboard follows an end-to-end analytics workflow that transforms raw business and economic datasets into actionable business insights.
 
-```markdown
-![Data Pipeline](images/data_pipeline.svg)
-```
+![Data Processing Pipeline](images/data_pipeline.svg)
 
-**Figure 2.** Data processing workflow from raw datasets through feature engineering and interactive dashboard generation.
+**Figure 2.** End-to-end data processing pipeline used to transform raw business and economic datasets into an integrated analytical dataset for the interactive R Shiny dashboard.
 
 The project follows the workflow below:
 
