@@ -1,5 +1,10 @@
 # Market Potential Analytics Dashboard
 
+![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
+![Shiny](https://img.shields.io/badge/Shiny-75AADB?style=for-the-badge&logo=rstudio&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+
 An interactive R Shiny dashboard for evaluating international market performance by integrating business sales data with external economic indicators. The dashboard helps identify markets that may be underperforming relative to their economic potential, enabling more informed investment and expansion decisions.
 
 ---
@@ -38,6 +43,19 @@ By integrating business performance with macroeconomic indicators, the dashboard
 
 ---
 
+## Using the Dashboard
+
+The dashboard supports interactive exploration through:
+
+- **Profitability Category** dropdown
+- **Region** dropdown
+- **GDP per Capita Range** slider
+- **Relative Opportunity Gap Range** slider
+- Interactive Plotly tooltips
+- Automatically updated KPI summaries and visualisations
+
+---
+
 ## Data Sources
 
 The dashboard integrates one internal business dataset with three external economic datasets.
@@ -61,14 +79,14 @@ The dashboard follows an end-to-end analytics workflow that transforms raw busin
 
 **Figure 2.** End-to-end data processing pipeline used to transform raw business and economic datasets into an integrated analytical dataset for the interactive R Shiny dashboard.
 
-The project follows the workflow below:
+The workflow consists of six stages:
 
 1. Load raw business and economic datasets.
 2. Extract 2014 economic indicators.
-3. Convert country names to ISO3 country codes.
+3. Standardise country names using ISO3 country codes.
 4. Integrate internal and external datasets.
 5. Perform feature engineering.
-6. Generate an interactive dashboard for exploratory analysis.
+6. Generate an interactive R Shiny dashboard for business intelligence and exploratory analysis.
 
 ---
 
@@ -123,8 +141,8 @@ Explores relationships between business performance and macroeconomic indicators
 - ggplot2
 - dplyr
 - tidyr
-- countrycode
 - readxl
+- countrycode
 
 ---
 
@@ -138,12 +156,19 @@ market-potential-analytics-dashboard/
 │
 ├── data/
 │   ├── raw/
+│   │   ├── superstore.xlsx
+│   │   ├── gdp_per_capita.csv
+│   │   ├── population_by_country.csv
+│   │   └── internet_user_by_country.csv
+│   │
 │   └── README.md
 │
 ├── docs/
-│   └── assignment_report.pdf
+│   └── market_potential_dashboard_report.pdf
 │
 ├── images/
+│   ├── dashboard_preview.png
+│   └── data_pipeline.svg
 │
 ├── LICENSE
 ├── README.md
@@ -154,7 +179,14 @@ market-potential-analytics-dashboard/
 
 ## How to Run
 
-Install the required R packages before launching the application.
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/darrenchenhw0212/market-potential-analytics-dashboard.git
+cd market-potential-analytics-dashboard
+```
+
+### 2. Install the required packages
 
 ```r
 install.packages(c(
@@ -168,23 +200,15 @@ install.packages(c(
 ))
 ```
 
-Launch the dashboard:
+### 3. Launch the dashboard
+
+Open RStudio (or any R environment), set the working directory to the project root, and run:
 
 ```r
 shiny::runApp("app")
 ```
 
----
-
-## Repository Contents
-
-This repository contains:
-
-- Source code for the interactive R Shiny dashboard
-- Raw datasets used in the analysis
-- Dashboard screenshots
-- Assignment report describing the complete analytical process
-- Documentation of data processing and feature engineering
+> **Note:** The dashboard expects the repository folder structure to remain unchanged because datasets are loaded using relative paths from the `data/raw/` directory.
 
 ---
 
@@ -213,6 +237,14 @@ Potential extensions include:
 - Adding predictive forecasting models
 - Introducing drill-down analysis at regional and product levels
 - Exporting automated management reports
+
+---
+
+## Acknowledgements
+
+The workflow diagrams in this repository were designed by the author using Lucidchart.
+
+Selected icons are sourced from SVG Repo and Flaticon under their respective licenses.
 
 ---
 
